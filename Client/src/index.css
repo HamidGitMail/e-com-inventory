@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-azureSoft text-gray-800; }
+.header { @apply bg-azurePrimary text-white p-4; }
+.card { @apply bg-white shadow rounded p-4; }
