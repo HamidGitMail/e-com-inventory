@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using ECom.Application.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ECom.Api.Controllers
 {
@@ -31,7 +29,7 @@ namespace ECom.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public virtual async Task<IActionResult> Update(object id, [FromBody] T dto)
+        public virtual async Task<IActionResult> Update([FromRoute] object id, [FromBody] T dto)
         {
             await _service.UpdateAsync(dto);
             return NoContent();

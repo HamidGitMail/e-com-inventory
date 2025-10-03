@@ -1,7 +1,5 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using ECom.Infrastructure.Repositories;
 using ECom.Application.Services.Interfaces;
+using ECom.Infrastructure.Repositories;
 
 namespace ECom.Application.Services
 {

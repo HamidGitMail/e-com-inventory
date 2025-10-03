@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using MySql.Data.MySqlClient;
-using HCS_Inventory_Api.Services;
-using HCS_Inventory_Api.Repositories;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +36,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 // Configure MySQL Connection
-builder.Services.AddScoped(_ => 
+builder.Services.AddScoped(_ =>
     new MySqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configure JWT Authentication
@@ -68,11 +66,6 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddAuthorization();
-
-// Register Services and Repositories
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 
 var app = builder.Build();
 

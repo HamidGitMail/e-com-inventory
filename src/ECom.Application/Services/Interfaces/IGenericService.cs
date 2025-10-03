@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
 namespace ECom.Application.Services.Interfaces
 {
     public interface IGenericService<T> where T : class
